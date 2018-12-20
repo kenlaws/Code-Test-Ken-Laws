@@ -14,6 +14,23 @@
 		931D53E321C9990600E88929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E121C9990600E88929 /* Main.storyboard */; };
 		931D53E521C9990700E88929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E421C9990700E88929 /* Assets.xcassets */; };
 		931D53E821C9990700E88929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E621C9990700E88929 /* LaunchScreen.storyboard */; };
+		9349B57121CA01ED00EAFA63 /* PhoneEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */; };
+		9349B57321CA04EB00EAFA63 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57221CA04EB00EAFA63 /* UIView+nib.swift */; };
+		9349B57521CA053100EAFA63 /* PhoneEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9349B57421CA053100EAFA63 /* PhoneEditView.xib */; };
+		9349B57721CA1B1700EAFA63 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57621CA1B1700EAFA63 /* String+Utilities.swift */; };
+		937F5CFE21C99F11003C8025 /* Address+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5CFA21C99F11003C8025 /* Address+CoreDataClass.swift */; };
+		937F5CFF21C99F11003C8025 /* Address+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5CFB21C99F11003C8025 /* Address+CoreDataProperties.swift */; };
+		937F5D0021C99F11003C8025 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5CFC21C99F11003C8025 /* Person+CoreDataClass.swift */; };
+		937F5D0121C99F11003C8025 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5CFD21C99F11003C8025 /* Person+CoreDataProperties.swift */; };
+		937F5D0621C9B010003C8025 /* Phone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D0221C9B010003C8025 /* Phone+CoreDataClass.swift */; };
+		937F5D0721C9B010003C8025 /* Phone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D0321C9B010003C8025 /* Phone+CoreDataProperties.swift */; };
+		937F5D0821C9B010003C8025 /* Email+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D0421C9B010003C8025 /* Email+CoreDataClass.swift */; };
+		937F5D0921C9B010003C8025 /* Email+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D0521C9B010003C8025 /* Email+CoreDataProperties.swift */; };
+		937F5D0D21C9B0CA003C8025 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D0B21C9B0CA003C8025 /* PersonCell.swift */; };
+		937F5D0E21C9B0CA003C8025 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F5D0C21C9B0CA003C8025 /* PersonCell.xib */; };
+		937F5D3121C9C9C4003C8025 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */; };
+		93E5744C21CAE79400C84065 /* Person+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E5744B21CAE79400C84065 /* Person+Functions.swift */; };
+		93E5744E21CAE98F00C84065 /* PhoneSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E5744D21CAE98F00C84065 /* PhoneSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +43,23 @@
 		931D53E421C9990700E88929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931D53E721C9990700E88929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931D53E921C9990700E88929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEditView.swift; sourceTree = "<group>"; };
+		9349B57221CA04EB00EAFA63 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
+		9349B57421CA053100EAFA63 /* PhoneEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneEditView.xib; sourceTree = "<group>"; };
+		9349B57621CA1B1700EAFA63 /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		937F5CFA21C99F11003C8025 /* Address+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+CoreDataClass.swift"; sourceTree = "<group>"; };
+		937F5CFB21C99F11003C8025 /* Address+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		937F5CFC21C99F11003C8025 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		937F5CFD21C99F11003C8025 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		937F5D0221C9B010003C8025 /* Phone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Phone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		937F5D0321C9B010003C8025 /* Phone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Phone+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		937F5D0421C9B010003C8025 /* Email+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Email+CoreDataClass.swift"; sourceTree = "<group>"; };
+		937F5D0521C9B010003C8025 /* Email+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Email+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		937F5D0B21C9B0CA003C8025 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		937F5D0C21C9B0CA003C8025 /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctions.swift; sourceTree = "<group>"; };
+		93E5744B21CAE79400C84065 /* Person+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+Functions.swift"; sourceTree = "<group>"; };
+		93E5744D21CAE98F00C84065 /* PhoneSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +92,81 @@
 		931D53D721C9990600E88929 /* Code Test Ken Laws */ = {
 			isa = PBXGroup;
 			children = (
+				9349B56F21CA007100EAFA63 /* Views */,
+				937F5D2F21C9C9A3003C8025 /* Utilities */,
+				937F5D0A21C9B0A8003C8025 /* Cells */,
+				931D53F121C9996400E88929 /* Models */,
+				931D53F021C9994C00E88929 /* Storyboards */,
+				931D53EF21C9992600E88929 /* Controllers */,
 				931D53D821C9990600E88929 /* AppDelegate.swift */,
-				931D53DD21C9990600E88929 /* MasterViewController.swift */,
-				931D53DF21C9990600E88929 /* DetailViewController.swift */,
-				931D53E121C9990600E88929 /* Main.storyboard */,
 				931D53E421C9990700E88929 /* Assets.xcassets */,
-				931D53E621C9990700E88929 /* LaunchScreen.storyboard */,
 				931D53E921C9990700E88929 /* Info.plist */,
-				931D53DA21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodeld */,
 			);
 			path = "Code Test Ken Laws";
+			sourceTree = "<group>";
+		};
+		931D53EF21C9992600E88929 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				931D53DD21C9990600E88929 /* MasterViewController.swift */,
+				931D53DF21C9990600E88929 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		931D53F021C9994C00E88929 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				931D53E121C9990600E88929 /* Main.storyboard */,
+				931D53E621C9990700E88929 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		931D53F121C9996400E88929 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				937F5D0221C9B010003C8025 /* Phone+CoreDataClass.swift */,
+				937F5D0321C9B010003C8025 /* Phone+CoreDataProperties.swift */,
+				937F5D0421C9B010003C8025 /* Email+CoreDataClass.swift */,
+				937F5D0521C9B010003C8025 /* Email+CoreDataProperties.swift */,
+				937F5CFA21C99F11003C8025 /* Address+CoreDataClass.swift */,
+				937F5CFB21C99F11003C8025 /* Address+CoreDataProperties.swift */,
+				937F5CFC21C99F11003C8025 /* Person+CoreDataClass.swift */,
+				937F5CFD21C99F11003C8025 /* Person+CoreDataProperties.swift */,
+				931D53DA21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodeld */,
+				93E5744B21CAE79400C84065 /* Person+Functions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9349B56F21CA007100EAFA63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */,
+				9349B57421CA053100EAFA63 /* PhoneEditView.xib */,
+				93E5744D21CAE98F00C84065 /* PhoneSectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		937F5D0A21C9B0A8003C8025 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				937F5D0B21C9B0CA003C8025 /* PersonCell.swift */,
+				937F5D0C21C9B0CA003C8025 /* PersonCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		937F5D2F21C9C9A3003C8025 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */,
+				9349B57221CA04EB00EAFA63 /* UIView+nib.swift */,
+				9349B57621CA1B1700EAFA63 /* String+Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +229,8 @@
 			files = (
 				931D53E821C9990700E88929 /* LaunchScreen.storyboard in Resources */,
 				931D53E521C9990700E88929 /* Assets.xcassets in Resources */,
+				937F5D0E21C9B0CA003C8025 /* PersonCell.xib in Resources */,
+				9349B57521CA053100EAFA63 /* PhoneEditView.xib in Resources */,
 				931D53E321C9990600E88929 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,9 +242,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937F5D0921C9B010003C8025 /* Email+CoreDataProperties.swift in Sources */,
+				937F5D0D21C9B0CA003C8025 /* PersonCell.swift in Sources */,
+				937F5D0821C9B010003C8025 /* Email+CoreDataClass.swift in Sources */,
 				931D53DC21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodeld in Sources */,
+				9349B57721CA1B1700EAFA63 /* String+Utilities.swift in Sources */,
+				937F5D3121C9C9C4003C8025 /* CoreDataFunctions.swift in Sources */,
+				937F5D0621C9B010003C8025 /* Phone+CoreDataClass.swift in Sources */,
+				937F5D0021C99F11003C8025 /* Person+CoreDataClass.swift in Sources */,
 				931D53D921C9990600E88929 /* AppDelegate.swift in Sources */,
+				93E5744E21CAE98F00C84065 /* PhoneSectionView.swift in Sources */,
+				9349B57321CA04EB00EAFA63 /* UIView+nib.swift in Sources */,
+				937F5CFF21C99F11003C8025 /* Address+CoreDataProperties.swift in Sources */,
+				937F5D0121C99F11003C8025 /* Person+CoreDataProperties.swift in Sources */,
+				937F5CFE21C99F11003C8025 /* Address+CoreDataClass.swift in Sources */,
 				931D53DE21C9990600E88929 /* MasterViewController.swift in Sources */,
+				93E5744C21CAE79400C84065 /* Person+Functions.swift in Sources */,
+				9349B57121CA01ED00EAFA63 /* PhoneEditView.swift in Sources */,
+				937F5D0721C9B010003C8025 /* Phone+CoreDataProperties.swift in Sources */,
 				931D53E021C9990600E88929 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
