@@ -7,7 +7,69 @@
 //
 
 import UIKit
+import CoreData
 
-class CoreDataFunctions: NSObject {
+let cdf = CoreDataFunctions.sharedInstance
+
+class CoreDataFunctions {
+
+	static let sharedInstance = CoreDataFunctions()
+
+	lazy var persistentContainer: NSPersistentContainer = {
+		let container = NSPersistentContainer(name: "Code_Test_Ken_Laws")
+		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+			if let error = error as NSError? {
+				fatalError("Unresolved error \(error), \(error.userInfo)")
+			}
+		})
+		return container
+	}()
+
+	lazy var fetchedResultsController: NSFetchedResultsController<Person> = {
+		let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+
+		// Set the batch size to a suitable number.
+		fetchRequest.fetchBatchSize = 20
+
+		// Edit the sort key as appropriate.
+		let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
+
+		fetchRequest.sortDescriptors = [sortDescriptor]
+
+		// Edit the section name key path and cache name if appropriate.
+		// nil for section name key path means "no sections".
+		let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "Master")
+
+		do {
+			try aFetchedResultsController.performFetch()
+		} catch {
+			let nserror = error as NSError
+			fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+		}
+
+		return aFetchedResultsController
+	}()
+
+	// MARK: - Core Data Saving support
+
+	func saveContext () {
+		let context = persistentContainer.viewContext
+		if context.hasChanges {
+			context.saveAndContinue()
+		}
+	}
+}
+
+
+extension NSManagedObjectContext {
+
+	func saveAndContinue() {
+		do {
+			try self.save()
+		} catch {
+			let nserror = error as NSError
+			print("Unresolved error \(nserror), \(nserror.userInfo)")
+		}
+	}
 
 }

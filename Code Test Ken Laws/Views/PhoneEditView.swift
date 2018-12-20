@@ -7,15 +7,53 @@
 //
 
 import UIKit
+import CoreData
 
 class PhoneEditView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+	@IBOutlet weak var phoneTypeField: UITextField!
+	@IBOutlet weak var phoneNumberField: UITextField!
+
+	var sourcePhone: Phone! {
+		didSet {
+			guard self.phoneTypeField != nil else { return }
+			self.populateFields()
+		}
+	}
+
+
+	func populateFields() {
+		guard let phone = sourcePhone else {
+			self.clearAll()
+			return
+		}
+		phoneTypeField.text = phone.phoneType
+		phoneNumberField.text = phone.phoneNumber
+	}
+
+
+	func clearAll() {
+		phoneTypeField.text = nil
+		phoneNumberField.text = nil
+	}
+
+}
+
+
+extension PhoneEditView:UITextFieldDelegate {
+
+	func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+		switch textField {
+		case phoneTypeField:
+			self.sourcePhone.phoneType = textField.text?.autoTrim
+		case phoneNumberField:
+			self.sourcePhone.phoneNumber = textField.text?.autoTrim
+		default:
+			break
+		}
+		self.sourcePhone.person?.timestamp = NSDate()
+		self.sourcePhone.managedObjectContext?.saveAndContinue()
+		return true
+	}
 
 }

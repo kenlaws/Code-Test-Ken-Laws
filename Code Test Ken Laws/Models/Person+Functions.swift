@@ -8,14 +8,17 @@
 
 import UIKit
 
-class Person_Functions: UIView {
+extension Person {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+	func fullName() -> String {
+		var fullName = ""
+		if let firstName = self.firstName {
+			fullName += firstName + " "
+		}
+		if let lastName = self.lastName {
+			fullName += lastName
+		}
+		return fullName
+	}
 
 }

@@ -7,15 +7,41 @@
 //
 
 import UIKit
+import CoreData
 
-class PhoneSectionView: UIView {
+@IBDesignable
+class PhoneSectionView: UIStackView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+	var delegate:DetailSectionProtocol!
+
+	func populatePhones() {
+		// Make certain we're starting fresh.
+		for view in self.arrangedSubviews {
+			self.removeArrangedSubview(view)
+			view.removeFromSuperview()
+		}
+
+		guard let phones = delegate.targetPerson?.phones else {
+			return
+		}
+
+		// Load any existing numbers.
+		for phone in phones {
+			let newPhone = PhoneEditView.fromNib()
+			newPhone.sourcePhone = phone as? Phone
+			self.addArrangedSubview(newPhone)
+		}
+	}
+
+
+	func addNewPhone() {
+		guard let context = delegate.context else { return }
+		let newPhone = Phone(context: context)
+		delegate.targetPerson?.insertIntoPhones(newPhone, at: 0)
+		let newView = PhoneEditView.fromNib()
+		newView.sourcePhone = newPhone
+		self.insertArrangedSubview(newView, at: 0)
+	}
 
 }
+
