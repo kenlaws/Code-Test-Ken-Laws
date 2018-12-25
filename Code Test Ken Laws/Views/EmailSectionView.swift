@@ -41,7 +41,7 @@ class EmailSectionView: UIStackView {
 	///
 	/// - Parameter toOn: Whether to turn editing on or off.
 	func setEmailEditMode(toOn:Bool) {
-		self.spacing = toOn ? 7 : -7
+		self.spacing = toOn ? 7 : 0
 		for email in self.arrangedSubviews as! [EmailEditView] {
 			email.editMode = toOn
 		}
@@ -58,5 +58,15 @@ class EmailSectionView: UIStackView {
 		self.insertArrangedSubview(newView, at: 0)
 	}
 
+
+	func removeEmail(emailView:EmailEditView) {
+		guard let email = emailView.sourceEmail, let context = email.managedObjectContext else {
+			return
+		}
+		self.removeArrangedSubview(emailView)
+		context.delete(email)
+		context.saveAndContinue()
+		emailView.removeFromSuperview()
+	}
 }
 

@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="npE-ZD-kOu" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="171" height="67"/>
+                    <rect key="frame" x="0.0" y="17" width="171" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -26,7 +26,7 @@
                     </connections>
                 </textView>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfE-Nm-cf1" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="181" y="0.0" width="308" height="67"/>
+                    <rect key="frame" x="181" y="17" width="256" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" textContentType="tel"/>
@@ -34,16 +34,33 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="uBE-mJ-t4R"/>
                     </connections>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvm-G7-deg">
+                    <rect key="frame" x="447" y="17.5" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Qvm-G7-deg" secondAttribute="height" multiplier="1:1" id="CoB-xq-tOk"/>
+                        <constraint firstAttribute="width" constant="32" id="JA1-WA-RQi"/>
+                    </constraints>
+                    <state key="normal" image="delete"/>
+                    <connections>
+                        <action selector="handleActionBtn" destination="iN0-l3-epB" eventType="touchUpInside" id="9Pi-g9-Ug1"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Foq-w1-V00"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WfE-Nm-cf1" secondAttribute="bottom" id="GsY-KP-Inh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="npE-ZD-kOu" secondAttribute="bottom" id="gRw-Qh-xpm"/>
-                <constraint firstItem="npE-ZD-kOu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mzd-Od-CPS"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="5Zn-E4-yDa"/>
+                <constraint firstItem="Qvm-G7-deg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="A3f-Vo-BWt"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="Foq-w1-V00"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WfE-Nm-cf1" secondAttribute="bottom" id="GsY-KP-Inh"/>
+                <constraint firstItem="Qvm-G7-deg" firstAttribute="leading" secondItem="WfE-Nm-cf1" secondAttribute="trailing" constant="10" id="K7m-a1-IgZ"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RXs-r7-1X5"/>
+                <constraint firstItem="Qvm-G7-deg" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="UXe-Zz-J0M"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qvm-G7-deg" secondAttribute="trailing" constant="10" id="Ziv-bG-0eg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="npE-ZD-kOu" secondAttribute="bottom" id="gRw-Qh-xpm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qvm-G7-deg" secondAttribute="bottom" constant="4" id="gxn-IR-5hC"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="mzd-Od-CPS"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="nBx-CG-m9H"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="o9l-iW-3W0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WfE-Nm-cf1" secondAttribute="trailing" id="q4k-vO-9sn"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="leading" secondItem="npE-ZD-kOu" secondAttribute="trailing" constant="10" id="tPk-Rl-V3z"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -51,6 +68,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="actionBtn" destination="Qvm-G7-deg" id="3QZ-8T-JrW"/>
                 <outlet property="phoneNumberField" destination="WfE-Nm-cf1" id="JgU-DN-Fm8"/>
                 <outlet property="phoneTypeField" destination="npE-ZD-kOu" id="Ve6-yH-X2k"/>
                 <outlet property="phoneTypeTrailing" destination="tPk-Rl-V3z" id="Lwb-fV-3BN"/>
@@ -58,4 +76,7 @@
             <point key="canvasLocation" x="146.40000000000001" y="-70.614692653673174"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete" width="30" height="30"/>
+    </resources>
 </document>

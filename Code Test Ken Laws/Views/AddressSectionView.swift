@@ -53,4 +53,15 @@ class AddressSectionView: UIStackView {
 		self.insertArrangedSubview(newView, at: 0)
 	}
 
+
+	func removeAddress(addressView:AddressEditView) {
+		guard let address = addressView.sourceAddress, let context = address.managedObjectContext else {
+			return
+		}
+		self.removeArrangedSubview(addressView)
+		context.delete(address)
+		context.saveAndContinue()
+		addressView.removeFromSuperview()
+	}
+
 }

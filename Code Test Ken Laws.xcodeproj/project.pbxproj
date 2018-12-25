@@ -14,6 +14,7 @@
 		931D53E321C9990600E88929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E121C9990600E88929 /* Main.storyboard */; };
 		931D53E521C9990700E88929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E421C9990700E88929 /* Assets.xcassets */; };
 		931D53E821C9990700E88929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E621C9990700E88929 /* LaunchScreen.storyboard */; };
+		93295EAC21D1EFB000D16002 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93295EAB21D1EFB000D16002 /* Alert.swift */; };
 		93313FAC21D084E9006CAC63 /* AddressSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93313FAB21D084E9006CAC63 /* AddressSectionView.swift */; };
 		9349B57121CA01ED00EAFA63 /* PhoneEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */; };
 		9349B57321CA04EB00EAFA63 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57221CA04EB00EAFA63 /* UIView+nib.swift */; };
@@ -51,6 +52,7 @@
 		931D53E421C9990700E88929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931D53E721C9990700E88929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931D53E921C9990700E88929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93295EAB21D1EFB000D16002 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		93313FAB21D084E9006CAC63 /* AddressSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSectionView.swift; sourceTree = "<group>"; };
 		9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEditView.swift; sourceTree = "<group>"; };
 		9349B57221CA04EB00EAFA63 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				9349B57221CA04EB00EAFA63 /* UIView+nib.swift */,
 				9349B57621CA1B1700EAFA63 /* String+Utilities.swift */,
 				93C16CAF21CC6E1700DFD92E /* Keyboard.swift */,
+				93295EAB21D1EFB000D16002 /* Alert.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				938ACB3D21D05BFD006C20D6 /* AddressEditView.swift in Sources */,
 				937BD81221CC749D006FC8BC /* EmailEditView.swift in Sources */,
 				937BD81421CC7754006FC8BC /* EmailSectionView.swift in Sources */,
+				93295EAC21D1EFB000D16002 /* Alert.swift in Sources */,
 				93E5744C21CAE79400C84065 /* Person+Functions.swift in Sources */,
 				93313FAC21D084E9006CAC63 /* AddressSectionView.swift in Sources */,
 				93C16CB021CC6E1700DFD92E /* Keyboard.swift in Sources */,

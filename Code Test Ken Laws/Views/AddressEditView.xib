@@ -16,6 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="489" height="218"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-jZ-ByI">
+                    <rect key="frame" x="447" y="93" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="41Q-Bl-n8G"/>
+                        <constraint firstAttribute="width" secondItem="ZVf-jZ-ByI" secondAttribute="height" multiplier="1:1" id="K8Z-O4-qFV"/>
+                    </constraints>
+                    <state key="normal" image="delete"/>
+                    <connections>
+                        <action selector="handleActionBtn" destination="iN0-l3-epB" eventType="touchUpInside" id="cUZ-U5-ps9"/>
+                    </connections>
+                </button>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-ka-8zq" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="244.5" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -26,7 +37,7 @@
                     </connections>
                 </textView>
                 <textView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npE-ZD-kOu" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="40" width="489" height="92"/>
+                    <rect key="frame" x="0.0" y="40" width="437" height="92"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="address-line1"/>
@@ -80,9 +91,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ZVf-jZ-ByI" firstAttribute="leading" secondItem="npE-ZD-kOu" secondAttribute="trailing" constant="10" id="39r-vs-ke9"/>
+                <constraint firstItem="ZVf-jZ-ByI" firstAttribute="width" secondItem="ZVf-jZ-ByI" secondAttribute="height" multiplier="1:1" id="3Fn-fR-XuV"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="top" secondItem="iSh-ka-8zq" secondAttribute="bottom" constant="7" id="4fp-ag-syx"/>
                 <constraint firstItem="esJ-hj-etz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="5W8-fT-fze"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" constant="1" id="6yO-9Z-gJl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZVf-jZ-ByI" secondAttribute="trailing" constant="10" id="7jo-f6-dWo"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" secondItem="npE-ZD-kOu" secondAttribute="bottom" constant="7" id="Egn-u8-xLy"/>
                 <constraint firstItem="r47-c8-H91" firstAttribute="bottom" secondItem="esJ-hj-etz" secondAttribute="bottom" id="GIU-Cv-qKt"/>
                 <constraint firstItem="iSh-ka-8zq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KxG-Sx-SYA"/>
@@ -94,8 +108,8 @@
                 <constraint firstItem="iSh-ka-8zq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bn6-Yo-PSG"/>
                 <constraint firstItem="DKU-Ab-deO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cdI-Ar-oWR"/>
                 <constraint firstItem="oFa-rJ-hUT" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" priority="999" id="eUh-h9-AME"/>
+                <constraint firstItem="ZVf-jZ-ByI" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="f85-as-vYn"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="leading" secondItem="iSh-ka-8zq" secondAttribute="leading" id="fLm-re-ixb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npE-ZD-kOu" secondAttribute="trailing" id="ftJ-4i-mEF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DKU-Ab-deO" secondAttribute="trailing" id="h0e-QL-SHG"/>
                 <constraint firstItem="DKU-Ab-deO" firstAttribute="top" secondItem="oFa-rJ-hUT" secondAttribute="bottom" constant="5" id="kds-53-QtJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="esJ-hj-etz" secondAttribute="trailing" priority="999" id="nHY-B3-5sN"/>
@@ -108,6 +122,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="actionBtn" destination="ZVf-jZ-ByI" id="hyg-t8-gpT"/>
                 <outlet property="addressTypeBottom" destination="4fp-ag-syx" id="kun-08-QGs"/>
                 <outlet property="addressTypeField" destination="iSh-ka-8zq" id="R6l-fj-jda"/>
                 <outlet property="cityBottom" destination="kds-53-QtJ" id="Y9i-dU-yeT"/>
@@ -126,4 +141,7 @@
             <point key="canvasLocation" x="146.40000000000001" y="-2.6986506746626691"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete" width="30" height="30"/>
+    </resources>
 </document>

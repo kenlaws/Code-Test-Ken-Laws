@@ -14,6 +14,7 @@ class PhoneEditView: UIView {
 	@IBOutlet weak var phoneTypeField: BorderedTextField!
 	@IBOutlet weak var phoneNumberField: BorderedTextField!
 	@IBOutlet weak var phoneTypeTrailing: NSLayoutConstraint!
+	@IBOutlet weak var actionBtn: UIButton!
 	var delegate:DetailSectionProtocol!
 
 	var sourcePhone: Phone! {
@@ -34,6 +35,7 @@ class PhoneEditView: UIView {
 		phoneTypeField.isEditable = editMode
 		phoneNumberField.isEditable = editMode
 		phoneTypeTrailing.constant = editMode ? 10 : -5
+		actionBtn.setImage(editMode ? #imageLiteral(resourceName: "delete"):#imageLiteral(resourceName: "phone"), for: .normal)
 	}
 
 
@@ -50,6 +52,30 @@ class PhoneEditView: UIView {
 	func clearAll() {
 		phoneTypeField.text = nil
 		phoneNumberField.text = nil
+	}
+
+
+	@IBAction func handleActionBtn() {
+		if editMode {
+			Alert.withButtonsAndCompletion(title: "Delete?", msg: "Delete this phone number?", cancel: "Cancel", buttons: ["OK"]) { (idx) in
+				if idx == 1 {
+					self.delegate.removePhoneView(phoneView: self)
+				}
+			}
+		} else {
+			let phoneNumber = phoneNumberOnly()
+			guard let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) else {
+				Alert.withOneButton(title: "Error", msg: "This phone number doesn't seem to be valid.", btn: "OK")
+				return
+			}
+			UIApplication.shared.open(url)
+		}
+	}
+
+
+	func phoneNumberOnly() -> String {
+		let filtredUnicodeScalars = phoneNumberField.text.unicodeScalars.filter{CharacterSet.decimalDigits.contains($0)}
+		return String(String.UnicodeScalarView(filtredUnicodeScalars))
 	}
 
 }

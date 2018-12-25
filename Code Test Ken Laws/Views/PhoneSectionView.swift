@@ -36,7 +36,7 @@ class PhoneSectionView: UIStackView {
 
 
 	func setPhoneEditMode(toOn:Bool) {
-		self.spacing = toOn ? 7 : -7
+		self.spacing = toOn ? 7 : 0
 		for phone in self.arrangedSubviews as! [PhoneEditView] {
 			phone.editMode = toOn
 		}
@@ -51,6 +51,19 @@ class PhoneSectionView: UIStackView {
 		newView.delegate = delegate
 		newView.sourcePhone = newPhone
 		self.insertArrangedSubview(newView, at: 0)
+		newView.editMode = true
+
+	}
+
+
+	func removePhone(phoneView:PhoneEditView) {
+		guard let phone = phoneView.sourcePhone, let context = phone.managedObjectContext else {
+			return
+		}
+		self.removeArrangedSubview(phoneView)
+		context.delete(phone)
+		context.saveAndContinue()
+		phoneView.removeFromSuperview()
 	}
 
 }

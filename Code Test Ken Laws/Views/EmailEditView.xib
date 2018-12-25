@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="npE-ZD-kOu" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="171" height="67"/>
+                    <rect key="frame" x="0.0" y="17" width="171" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -26,7 +26,7 @@
                     </connections>
                 </textView>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfE-Nm-cf1" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="181" y="0.0" width="308" height="67"/>
+                    <rect key="frame" x="181" y="17" width="256" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
@@ -34,23 +34,43 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="uBE-mJ-t4R"/>
                     </connections>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO2-29-Oi8">
+                    <rect key="frame" x="447" y="17.5" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EO2-29-Oi8" secondAttribute="height" multiplier="1:1" id="Ypx-BG-v5s"/>
+                        <constraint firstAttribute="width" constant="32" id="qEw-Zp-6DC"/>
+                    </constraints>
+                    <state key="normal" image="delete"/>
+                    <connections>
+                        <action selector="handleActionBtn" destination="iN0-l3-epB" eventType="touchUpInside" id="abx-7J-rWe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Foq-w1-V00"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WfE-Nm-cf1" secondAttribute="bottom" id="GsY-KP-Inh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="npE-ZD-kOu" secondAttribute="bottom" id="gRw-Qh-xpm"/>
-                <constraint firstItem="npE-ZD-kOu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mzd-Od-CPS"/>
+                <constraint firstItem="EO2-29-Oi8" firstAttribute="leading" secondItem="WfE-Nm-cf1" secondAttribute="trailing" constant="10" id="2zs-PV-aGm"/>
+                <constraint firstItem="EO2-29-Oi8" firstAttribute="width" secondItem="EO2-29-Oi8" secondAttribute="height" multiplier="1:1" id="FbR-KC-DhQ"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="Foq-w1-V00"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WfE-Nm-cf1" secondAttribute="bottom" id="GsY-KP-Inh"/>
+                <constraint firstItem="EO2-29-Oi8" firstAttribute="width" secondItem="EO2-29-Oi8" secondAttribute="height" multiplier="1:1" id="Iwy-zd-r70"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Lhr-yg-PjO"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="SoV-2t-K8V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="npE-ZD-kOu" secondAttribute="bottom" id="gRw-Qh-xpm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EO2-29-Oi8" secondAttribute="trailing" constant="10" id="gYU-9Q-aGF"/>
+                <constraint firstItem="EO2-29-Oi8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="ga6-In-Ip2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EO2-29-Oi8" secondAttribute="bottom" constant="4" id="lFO-jM-QKG"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="mzd-Od-CPS"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="nBx-CG-m9H"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="o9l-iW-3W0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WfE-Nm-cf1" secondAttribute="trailing" id="q4k-vO-9sn"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="leading" secondItem="npE-ZD-kOu" secondAttribute="trailing" constant="10" id="tPk-Rl-V3z"/>
+                <constraint firstItem="EO2-29-Oi8" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="yrm-sD-Ewd"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="actionBtn" destination="EO2-29-Oi8" id="DAl-bS-42j"/>
                 <outlet property="emailField" destination="WfE-Nm-cf1" id="1rI-vi-dfV"/>
                 <outlet property="emailTypeField" destination="npE-ZD-kOu" id="gEO-cH-ULs"/>
                 <outlet property="emailTypeTrailing" destination="tPk-Rl-V3z" id="2m6-tc-xDE"/>
@@ -58,4 +78,7 @@
             <point key="canvasLocation" x="146.40000000000001" y="-70.614692653673174"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete" width="30" height="30"/>
+    </resources>
 </document>

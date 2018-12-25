@@ -8,12 +8,17 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 protocol DetailSectionProtocol {
 	var targetPerson:Person? { get }
 	var context:NSManagedObjectContext? { get }
+	var geoCoder:CLGeocoder? { get }
 	func updateDetailText()
 	func scrollToView(view: UIView)
+	func removePhoneView(phoneView:PhoneEditView)
+	func removeEmailView(emailView:EmailEditView)
+	func removeAddressView(addressView:AddressEditView)
 }
 
 
@@ -28,16 +33,20 @@ class DetailViewController: UIViewController {
 	@IBOutlet weak var birthdayBtn: UIButton!
 	@IBOutlet weak var birthdayBottom: NSLayoutConstraint!
 	@IBOutlet weak var addPhoneBtn: UIButton!
+	@IBOutlet weak var phoneLabelBottom: NSLayoutConstraint!
 	@IBOutlet weak var phoneFields: PhoneSectionView!
 	@IBOutlet weak var addEmailBtn: UIButton!
+	@IBOutlet weak var emailLabelBottom: NSLayoutConstraint!
 	@IBOutlet weak var emailFields: EmailSectionView!
 	@IBOutlet weak var addAddressBtn: UIButton!
+	@IBOutlet weak var addressLabelBottom: NSLayoutConstraint!
 	@IBOutlet weak var addressFields: AddressSectionView!
 	@IBOutlet weak var scrollViewBottom: NSLayoutConstraint!
 	@IBOutlet weak var birthdayPicker: UIDatePicker!
 	@IBOutlet weak var birthdayPickerBottom: NSLayoutConstraint!
 
 	var managedObjectContext: NSManagedObjectContext = cdf.persistentContainer.viewContext
+	var geocoder = CLGeocoder()
 
 	var detailItem: Person? {
 		didSet {
@@ -51,21 +60,23 @@ class DetailViewController: UIViewController {
 		super.viewDidLoad()
 
 		self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-		self.isEditing = false
-
-		if let detail = detailItem, detail.firstName == nil, detail.lastName == nil {
-			self.isEditing = true
-		}
-
-		birthdayPickerBottom.constant = -birthdayPicker.frame.height - self.view!.safeAreaInsets.bottom
-
 		phoneFields.delegate = self
 		emailFields.delegate = self
 		addressFields.delegate = self
 
-		configureView()
-		setupEditMode()
+		UIView.performWithoutAnimation {
+			self.isEditing = false
+
+			if let detail = self.detailItem, detail.firstName == nil, detail.lastName == nil {
+				self.isEditing = true
+			}
+
+			self.birthdayPickerBottom.constant = -self.birthdayPicker.frame.height - self.view!.safeAreaInsets.bottom
+
+
+			self.configureView()
+			self.setupEditMode()
+		}
 	}
 
 
@@ -122,10 +133,13 @@ class DetailViewController: UIViewController {
 		birthdayBtn.isEnabled = isEditing
 		if !isEditing { hideBirthdayPicker() }
 		addPhoneBtn.isHidden = !isEditing
+		phoneLabelBottom.constant = isEditing ? 10 : 0
 		phoneFields.setPhoneEditMode(toOn: isEditing)
 		addEmailBtn.isHidden = !isEditing
+		emailLabelBottom.constant = isEditing ? 10 : 0
 		emailFields.setEmailEditMode(toOn: isEditing)
 		addAddressBtn.isHidden = !isEditing
+		addressLabelBottom.constant = isEditing ? 10 : 0
 		addressFields.setAddressEditMode(toOn: isEditing)
 	}
 
@@ -286,6 +300,10 @@ extension DetailViewController: DetailSectionProtocol {
 		return self.managedObjectContext
 	}
 
+	var geoCoder: CLGeocoder? {
+		return self.geocoder
+	}
+
 
 	func updateDetailText() {
 		var detailText = ""
@@ -319,5 +337,19 @@ extension DetailViewController: DetailSectionProtocol {
 			let rect = self.scrollView.convert(view.bounds, from: view).insetBy(dx: 0, dy: -10)
 			self.scrollView.scrollRectToVisible(rect, animated: true)
 		}
+	}
+
+
+	func removePhoneView(phoneView: PhoneEditView) {
+		self.phoneFields.removePhone(phoneView: phoneView)
+	}
+
+
+	func removeEmailView(emailView: EmailEditView) {
+		self.emailFields.removeEmail(emailView: emailView)
+	}
+
+	func removeAddressView(addressView: AddressEditView) {
+		self.addressFields.removeAddress(addressView: addressView)
 	}
 }

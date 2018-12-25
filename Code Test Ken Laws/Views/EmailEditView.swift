@@ -14,6 +14,7 @@ class EmailEditView: UIView {
 	@IBOutlet weak var emailTypeField: BorderedTextField!
 	@IBOutlet weak var emailField: BorderedTextField!
 	@IBOutlet weak var emailTypeTrailing: NSLayoutConstraint!
+	@IBOutlet weak var actionBtn: UIButton!
 	var delegate:DetailSectionProtocol!
 
 	var sourceEmail: Email! {
@@ -34,6 +35,7 @@ class EmailEditView: UIView {
 		emailTypeField.isEditable = editMode
 		emailField.isEditable = editMode
 		emailTypeTrailing.constant = editMode ? 10 : -5
+		actionBtn.setImage(editMode ? #imageLiteral(resourceName: "delete"):#imageLiteral(resourceName: "email"), for: .normal)
 	}
 
 
@@ -51,6 +53,23 @@ class EmailEditView: UIView {
 		emailTypeField.text = nil
 		emailField.text = nil
 	}
+
+	@IBAction func handleActionBtn() {
+		if editMode {
+			Alert.withButtonsAndCompletion(title: "Delete?", msg: "Delete this email address?", cancel: "Cancel", buttons: ["OK"]) { (idx) in
+				if idx == 1 {
+					self.delegate.removeEmailView(emailView: self)
+				}
+			}
+		} else {
+			guard let url = URL(string: "mailto://\(sourceEmail.emailAddress ?? "")"), UIApplication.shared.canOpenURL(url) else {
+				Alert.withOneButton(title: "Error", msg: "This email address doesn't seem to be valid.", btn: "OK")
+				return
+			}
+			UIApplication.shared.open(url)
+		}
+	}
+
 
 }
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class AddressEditView: UIView {
 
@@ -24,6 +26,7 @@ class AddressEditView: UIView {
 	@IBOutlet weak var stateTrailing: NSLayoutConstraint!
 	@IBOutlet weak var zipField:BorderedTextField!
 	@IBOutlet weak var zipTrailing: NSLayoutConstraint!
+	@IBOutlet weak var actionBtn: UIButton!
 	var delegate:DetailSectionProtocol!
 
 	var sourceAddress: Address! {
@@ -55,6 +58,7 @@ class AddressEditView: UIView {
 		cityTrailing.constant = editMode ? 10 : -5
 		stateTrailing.constant = editMode ? 10 : -5
 		cityBottom.constant = editMode ? 15 : 5
+		actionBtn.setImage(editMode ? #imageLiteral(resourceName: "delete"):#imageLiteral(resourceName: "map"), for: .normal)
 	}
 
 
@@ -81,6 +85,30 @@ class AddressEditView: UIView {
 		zipField.text = nil
 	}
 
+
+	@IBAction func handleActionBtn() {
+		if editMode {
+			Alert.withButtonsAndCompletion(title: "Delete?", msg: "Delete this address?", cancel: "Cancel", buttons: ["OK"]) { (idx) in
+				if idx == 1 {
+					self.delegate.removeAddressView(addressView: self)
+				}
+			}
+		} else {
+			let locationString = "\(sourceAddress.street ?? "") \(sourceAddress.city ?? ""), \(sourceAddress.state ?? "") \(sourceAddress.zip ?? "")"
+			delegate.geoCoder!.geocodeAddressString(locationString) { (places, err) in
+				guard let placemark = places?.first, let loc = placemark.location else {
+					Alert.withOneButton(title: "Error", msg: "We couldn't find this address.\n(\(err?.localizedDescription ?? "unknown error"))", btn: "OK")
+					return
+				}
+				var pmName = self.sourceAddress.person!.fullName()
+				if let aType = self.sourceAddress.addressType {
+					pmName += " - \(aType)"
+				}
+				let destination = MKMapItem(placemark: MKPlacemark(location: loc, name: pmName, postalAddress: nil))
+				destination.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+			}
+		}
+	}
 }
 
 
