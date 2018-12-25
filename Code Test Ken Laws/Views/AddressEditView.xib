@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddressEditView" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="489" height="218"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-ka-8zq" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="244.5" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="QJy-ag-CVZ"/>
+                    </connections>
+                </textView>
+                <textView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npE-ZD-kOu" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="40" width="489" height="92"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="address-line1"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="xHn-Vw-vxl"/>
+                    </connections>
+                </textView>
+                <textView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfE-Nm-cf1" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="139" width="245.5" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="address-line2"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="jt0-Dy-TMg"/>
+                    </connections>
+                </textView>
+                <textView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="220" verticalCompressionResistancePriority="748" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFa-rJ-hUT" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="179" width="195.5" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="address-level2"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="6ze-zA-MN7"/>
+                    </connections>
+                </textView>
+                <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r47-c8-H91" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="205.5" y="179" width="175.5" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="address-level1"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="e8r-Dd-S0Z"/>
+                    </connections>
+                </textView>
+                <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esJ-hj-etz" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
+                    <rect key="frame" x="391" y="179" width="98" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numbersAndPunctuation" returnKeyType="next" textContentType="postal-code"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="kaa-Pg-erl"/>
+                    </connections>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKU-Ab-deO">
+                    <rect key="frame" x="0.0" y="217" width="489" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Xke-gZ-nKL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="top" secondItem="iSh-ka-8zq" secondAttribute="bottom" constant="7" id="4fp-ag-syx"/>
+                <constraint firstItem="esJ-hj-etz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="5W8-fT-fze"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" constant="1" id="6yO-9Z-gJl"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="top" secondItem="npE-ZD-kOu" secondAttribute="bottom" constant="7" id="Egn-u8-xLy"/>
+                <constraint firstItem="r47-c8-H91" firstAttribute="bottom" secondItem="esJ-hj-etz" secondAttribute="bottom" id="GIU-Cv-qKt"/>
+                <constraint firstItem="iSh-ka-8zq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KxG-Sx-SYA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DKU-Ab-deO" secondAttribute="bottom" id="OnC-Bm-iiX"/>
+                <constraint firstItem="esJ-hj-etz" firstAttribute="leading" secondItem="r47-c8-H91" secondAttribute="trailing" constant="10" id="PBu-d9-rh7"/>
+                <constraint firstItem="oFa-rJ-hUT" firstAttribute="top" secondItem="WfE-Nm-cf1" secondAttribute="bottom" constant="7" id="W4d-x8-l8h"/>
+                <constraint firstItem="iSh-ka-8zq" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="Yqq-iN-IOR"/>
+                <constraint firstItem="oFa-rJ-hUT" firstAttribute="bottom" secondItem="r47-c8-H91" secondAttribute="bottom" id="aoX-qY-CEE"/>
+                <constraint firstItem="iSh-ka-8zq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bn6-Yo-PSG"/>
+                <constraint firstItem="DKU-Ab-deO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cdI-Ar-oWR"/>
+                <constraint firstItem="oFa-rJ-hUT" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" priority="999" id="eUh-h9-AME"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="leading" secondItem="iSh-ka-8zq" secondAttribute="leading" id="fLm-re-ixb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npE-ZD-kOu" secondAttribute="trailing" id="ftJ-4i-mEF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DKU-Ab-deO" secondAttribute="trailing" id="h0e-QL-SHG"/>
+                <constraint firstItem="DKU-Ab-deO" firstAttribute="top" secondItem="oFa-rJ-hUT" secondAttribute="bottom" constant="5" id="kds-53-QtJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="esJ-hj-etz" secondAttribute="trailing" priority="999" id="nHY-B3-5sN"/>
+                <constraint firstItem="WfE-Nm-cf1" firstAttribute="leading" secondItem="npE-ZD-kOu" secondAttribute="leading" id="tD5-15-d17"/>
+                <constraint firstItem="r47-c8-H91" firstAttribute="leading" secondItem="oFa-rJ-hUT" secondAttribute="trailing" constant="10" id="ufK-5w-4uk"/>
+                <constraint firstItem="oFa-rJ-hUT" firstAttribute="leading" secondItem="WfE-Nm-cf1" secondAttribute="leading" id="wqb-S1-iRU"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addressTypeBottom" destination="4fp-ag-syx" id="kun-08-QGs"/>
+                <outlet property="addressTypeField" destination="iSh-ka-8zq" id="R6l-fj-jda"/>
+                <outlet property="cityBottom" destination="kds-53-QtJ" id="Y9i-dU-yeT"/>
+                <outlet property="cityField" destination="oFa-rJ-hUT" id="pXa-Nd-ZJf"/>
+                <outlet property="cityTrailing" destination="ufK-5w-4uk" id="fOe-zg-4zb"/>
+                <outlet property="cityWidth" destination="eUh-h9-AME" id="ylD-R0-KqK"/>
+                <outlet property="stateField" destination="r47-c8-H91" id="ZQ6-ge-eFK"/>
+                <outlet property="stateTrailing" destination="PBu-d9-rh7" id="lvS-sq-Oka"/>
+                <outlet property="streetBottom" destination="Egn-u8-xLy" id="lUE-81-g8H"/>
+                <outlet property="streetField" destination="npE-ZD-kOu" id="FKj-cE-3B0"/>
+                <outlet property="suiteBottom" destination="W4d-x8-l8h" id="eDR-hz-5rY"/>
+                <outlet property="suiteField" destination="WfE-Nm-cf1" id="X42-Tk-c3j"/>
+                <outlet property="zipField" destination="esJ-hj-etz" id="vB3-Zb-j55"/>
+                <outlet property="zipTrailing" destination="nHY-B3-5sN" id="2PN-zw-5xf"/>
+            </connections>
+            <point key="canvasLocation" x="146.40000000000001" y="-2.6986506746626691"/>
+        </view>
+    </objects>
+</document>

@@ -2,7 +2,7 @@
 //  Person+CoreDataProperties.swift
 //  Code Test Ken Laws
 //
-//  Created by Ken Laws on 12/18/18.
+//  Created by Ken Laws on 12/22/18.
 //  Copyright © 2018 dela. All rights reserved.
 //
 //
@@ -21,9 +21,10 @@ extension Person {
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
     @NSManaged public var timestamp: NSDate?
+    @NSManaged public var detailText: String?
     @NSManaged public var addresses: NSOrderedSet?
-    @NSManaged public var phones: NSOrderedSet?
     @NSManaged public var emails: NSOrderedSet?
+    @NSManaged public var phones: NSOrderedSet?
 
 }
 
@@ -62,41 +63,6 @@ extension Person {
 
 }
 
-// MARK: Generated accessors for phones
-extension Person {
-
-    @objc(insertObject:inPhonesAtIndex:)
-    @NSManaged public func insertIntoPhones(_ value: Phone, at idx: Int)
-
-    @objc(removeObjectFromPhonesAtIndex:)
-    @NSManaged public func removeFromPhones(at idx: Int)
-
-    @objc(insertPhones:atIndexes:)
-    @NSManaged public func insertIntoPhones(_ values: [Phone], at indexes: NSIndexSet)
-
-    @objc(removePhonesAtIndexes:)
-    @NSManaged public func removeFromPhones(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInPhonesAtIndex:withObject:)
-    @NSManaged public func replacePhones(at idx: Int, with value: Phone)
-
-    @objc(replacePhonesAtIndexes:withPhones:)
-    @NSManaged public func replacePhones(at indexes: NSIndexSet, with values: [Phone])
-
-    @objc(addPhonesObject:)
-    @NSManaged public func addToPhones(_ value: Phone)
-
-    @objc(removePhonesObject:)
-    @NSManaged public func removeFromPhones(_ value: Phone)
-
-    @objc(addPhones:)
-    @NSManaged public func addToPhones(_ values: NSOrderedSet)
-
-    @objc(removePhones:)
-    @NSManaged public func removeFromPhones(_ values: NSOrderedSet)
-
-}
-
 // MARK: Generated accessors for emails
 extension Person {
 
@@ -129,5 +95,40 @@ extension Person {
 
     @objc(removeEmails:)
     @NSManaged public func removeFromEmails(_ values: NSOrderedSet)
+
+}
+
+// MARK: Generated accessors for phones
+extension Person {
+
+    @objc(insertObject:inPhonesAtIndex:)
+    @NSManaged public func insertIntoPhones(_ value: Phone, at idx: Int)
+
+    @objc(removeObjectFromPhonesAtIndex:)
+    @NSManaged public func removeFromPhones(at idx: Int)
+
+    @objc(insertPhones:atIndexes:)
+    @NSManaged public func insertIntoPhones(_ values: [Phone], at indexes: NSIndexSet)
+
+    @objc(removePhonesAtIndexes:)
+    @NSManaged public func removeFromPhones(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInPhonesAtIndex:withObject:)
+    @NSManaged public func replacePhones(at idx: Int, with value: Phone)
+
+    @objc(replacePhonesAtIndexes:withPhones:)
+    @NSManaged public func replacePhones(at indexes: NSIndexSet, with values: [Phone])
+
+    @objc(addPhonesObject:)
+    @NSManaged public func addToPhones(_ value: Phone)
+
+    @objc(removePhonesObject:)
+    @NSManaged public func removeFromPhones(_ value: Phone)
+
+    @objc(addPhones:)
+    @NSManaged public func addToPhones(_ values: NSOrderedSet)
+
+    @objc(removePhones:)
+    @NSManaged public func removeFromPhones(_ values: NSOrderedSet)
 
 }

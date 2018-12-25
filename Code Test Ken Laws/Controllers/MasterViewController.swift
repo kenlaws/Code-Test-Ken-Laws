@@ -102,14 +102,7 @@ extension MasterViewController { //tableView functions
 
 	func configureCell(_ cell: PersonCell, withPerson person: Person) {
 		cell.name.text = "\(person.firstName ?? "") \(person.lastName ?? "")"
-		if let phone = person.phones?.firstObject as! Phone?, let number = phone.phoneNumber {
-			cell.phone.text = "\(number)"
-			if let type = phone.phoneType {
-				cell.phone.text = cell.phone.text! + " - \(type)"
-			}
-		} else {
-			cell.phone.text = ""
-		}
+		cell.detail.text = person.detailText ?? " "
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -28,8 +28,17 @@ class PhoneSectionView: UIStackView {
 		// Load any existing numbers.
 		for phone in phones {
 			let newPhone = PhoneEditView.fromNib()
+			newPhone.delegate = delegate
 			newPhone.sourcePhone = phone as? Phone
 			self.addArrangedSubview(newPhone)
+		}
+	}
+
+
+	func setPhoneEditMode(toOn:Bool) {
+		self.spacing = toOn ? 7 : -7
+		for phone in self.arrangedSubviews as! [PhoneEditView] {
+			phone.editMode = toOn
 		}
 	}
 
@@ -39,6 +48,7 @@ class PhoneSectionView: UIStackView {
 		let newPhone = Phone(context: context)
 		delegate.targetPerson?.insertIntoPhones(newPhone, at: 0)
 		let newView = PhoneEditView.fromNib()
+		newView.delegate = delegate
 		newView.sourcePhone = newPhone
 		self.insertArrangedSubview(newView, at: 0)
 	}

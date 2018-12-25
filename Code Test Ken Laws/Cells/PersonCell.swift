@@ -11,12 +11,8 @@ import UIKit
 class PersonCell: UITableViewCell {
 
 	@IBOutlet weak var name:UILabel!
-	@IBOutlet weak var phone:UILabel!
+	@IBOutlet weak var detail:UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     
 }
