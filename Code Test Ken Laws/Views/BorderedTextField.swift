@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// Custom UITextView class used by every editable text view.
+/// Knows how to change from bordered to non-bordered (imitating a UILabel, in our case.)
+///
 @IBDesignable
 class BorderedTextField: UITextView {
 

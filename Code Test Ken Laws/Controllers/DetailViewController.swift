@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 import CoreLocation
 
+/// This protocol is used by the different EditViews to enhance functionality.
+/// It's adopted by the DetailViewController.
+///
 protocol DetailSectionProtocol {
 	var targetPerson:Person? { get }
 	var context:NSManagedObjectContext? { get }
@@ -21,6 +24,10 @@ protocol DetailSectionProtocol {
 }
 
 
+/// The DetailViewController displays an individual contact in both "display" and
+/// "edit" mode. In display mode, the data is compact. In "edit" mode, it's more
+/// spread out for ease of editing.
+///
 class DetailViewController: UIViewController {
 
 	@IBOutlet weak var scrollView: UIScrollView!
@@ -106,7 +113,6 @@ class DetailViewController: UIViewController {
 
 
 	func configureView() {
-		// Update the user interface for the detail item.
 		if let detail = detailItem {
 			firstNameField.text = detail.firstName ?? ""
 			lastNameField.text = detail.lastName ?? ""

@@ -11,6 +11,8 @@ import CoreData
 
 let cdf = CoreDataFunctions.sharedInstance
 
+/// This class handles the creation of the CoreData containers and variables.
+///
 class CoreDataFunctions {
 
 	static let sharedInstance = CoreDataFunctions()
@@ -57,6 +59,9 @@ class CoreDataFunctions {
 }
 
 
+/// This shorthands the save() function, removing the need for try
+/// blocks throughout code where try blocks are really never needed.
+///
 extension NSManagedObjectContext {
 
 	func saveAndContinue() {

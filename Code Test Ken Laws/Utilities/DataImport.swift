@@ -28,7 +28,9 @@ struct AddressData: Codable {
 }
 
 
-
+/// On first run, the app will call this to import dummy data,
+/// including a random number of addresses and phone numbers.
+///
 class DataImport {
 
 	class func importNames() {

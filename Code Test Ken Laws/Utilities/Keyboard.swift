@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// A nifty little struct to grab keyboard info out of a notification
+/// and distill down the parts needed for animation.
+///
 struct KLKeyboardParts {
 	var height:CGFloat = 0
 	var rate:TimeInterval = 0

@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+/// As should be the norm, very little happens in the AppDelegate.
+/// There's some setup for the UISplitViewController, but that's it.
+///
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 

@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// This is the table cell displayed in the main view.
+///
 class PersonCell: UITableViewCell {
 
 	@IBOutlet weak var name:UILabel!

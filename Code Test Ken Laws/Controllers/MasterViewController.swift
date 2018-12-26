@@ -8,10 +8,10 @@
 
 import UIKit
 import CoreData
-import Contacts
-import CoreLocation
-import Intents
 
+/// The main view controller, first to appear on a phone, and appearing on the
+/// left side on a pad. Contains the table view showing all the contacts.
+///
 class MasterViewController: UITableViewController {
 
 	var detailViewController: DetailViewController? = nil
@@ -66,7 +66,6 @@ class MasterViewController: UITableViewController {
 		self.performSegue(withIdentifier: "showDetail", sender: nil)
 	}
 
-	// MARK: - Segues
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetail" {

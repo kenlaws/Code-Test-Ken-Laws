@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+/// Custom stack view for holding all current AddressEditViews.
+/// Knows how to create and delete Addresses in CoreData.
+///
 @IBDesignable
 class AddressSectionView: UIStackView {
 

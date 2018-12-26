@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
+/// Custom stack view for holding any emailEditViews.
+/// Knows how to add and remove Emails from CoreData.
+///
 @IBDesignable
 class EmailSectionView: UIStackView {
 
 	var delegate:DetailSectionProtocol!
 
-	/// Creates subviews for each existing address.
-	///
 	func populateEmails() {
 		// Make certain we're starting fresh.
 		for view in self.arrangedSubviews {
@@ -27,7 +28,6 @@ class EmailSectionView: UIStackView {
 			return
 		}
 
-		// Load any existing numbers.
 		for email in emails {
 			let newEmail = EmailEditView.fromNib()
 			newEmail.delegate = delegate
@@ -37,9 +37,6 @@ class EmailSectionView: UIStackView {
 	}
 
 
-	/// Sets editing mode on or off for all subviews.
-	///
-	/// - Parameter toOn: Whether to turn editing on or off.
 	func setEmailEditMode(toOn:Bool) {
 		self.spacing = toOn ? 7 : 0
 		for email in self.arrangedSubviews as! [EmailEditView] {

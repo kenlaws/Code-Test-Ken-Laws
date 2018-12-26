@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// An extension of Person with functions to return a record's full name
+/// and to determine which field to display under the name on the main view.
+///
 extension Person {
 
 	func fullName() -> String {

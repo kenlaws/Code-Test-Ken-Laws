@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+/// Custom view for holding an individual Phone entry.
+/// Knows how to update CoreData with new user text.
+/// Also knows how to configure for edit mode, and how to call out to the Phone app for its phone number.
+///
 class PhoneEditView: UIView {
 
 	@IBOutlet weak var phoneTypeField: BorderedTextField!

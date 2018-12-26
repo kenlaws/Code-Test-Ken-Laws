@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+/// Custom view for holding an individual Email entry.
+/// Knows how to update CoreData with new user text.
+/// Also knows how to configure for edit mode, and how to call out to Mail for its email address.
+///
 class EmailEditView: UIView {
 
 	@IBOutlet weak var emailTypeField: BorderedTextField!

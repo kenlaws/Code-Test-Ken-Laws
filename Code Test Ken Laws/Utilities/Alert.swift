@@ -11,6 +11,9 @@ import UIKit
 
 let Device = UIDevice.current.userInterfaceIdiom
 
+/// This was lifted from my CocoaPod, KLAlert (https://cocoapods.org/pods/klAlert)
+/// I copied it locally to simplify the app (no workspace, etc.)
+///
 public class Alert {
 
 	static var alertWindow: UIWindow = {

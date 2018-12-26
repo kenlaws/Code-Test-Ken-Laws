@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CoreLocation
 
+/// Custom view for holding an individual Address entry.
+/// Knows how to update CoreData with new user text.
+/// Also knows how to configure for edit mode, and how to call out to Maps for its address.
+///
 class AddressEditView: UIView {
 
 	@IBOutlet weak var addressTypeField:BorderedTextField!
@@ -112,7 +116,9 @@ class AddressEditView: UIView {
 				if let aType = self.sourceAddress.addressType {
 					pmName += " - \(aType)"
 				}
-				let destination = MKMapItem(placemark: MKPlacemark(location: loc, name: pmName, postalAddress: nil))
+				let pm = MKPlacemark(coordinate: loc.coordinate)
+				let destination = MKMapItem(placemark: pm)
+				destination.name = pmName
 				destination.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
 			}
 		}

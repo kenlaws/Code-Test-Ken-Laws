@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+/// Custom stack view for holding all current PhoneEditViews.
+/// Knows how to add and delete Phones from CoreData.
+///
 @IBDesignable
 class PhoneSectionView: UIStackView {
 

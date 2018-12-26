@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+/// A set of extensions to simplify the loading of views from a .xib file.
+///
 public extension UIView {
 
 	var firstResponder:UIView? {
