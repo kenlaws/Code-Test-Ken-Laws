@@ -43,6 +43,14 @@ class AddressEditView: UIView {
 	}
 
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		streetField.textContainer.lineBreakMode = .byWordWrapping
+		cityField.textContainer.lineBreakMode = .byWordWrapping
+		zipField.textContainer.lineBreakMode = .byWordWrapping
+	}
+
+
 	func setupEditMode() {
 		addressTypeField.isEditable = editMode
 		streetField.isEditable = editMode
@@ -139,7 +147,6 @@ extension AddressEditView:UITextViewDelegate {
 		default:
 			break
 		}
-		self.delegate.updateDetailText()
 		self.sourceAddress.person?.timestamp = NSDate()
 		self.sourceAddress.managedObjectContext?.saveAndContinue()
 		return true

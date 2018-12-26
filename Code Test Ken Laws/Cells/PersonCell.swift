@@ -14,5 +14,4 @@ class PersonCell: UITableViewCell {
 	@IBOutlet weak var detail:UILabel!
 
 
-    
 }

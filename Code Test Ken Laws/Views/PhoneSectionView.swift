@@ -52,7 +52,7 @@ class PhoneSectionView: UIStackView {
 		newView.sourcePhone = newPhone
 		self.insertArrangedSubview(newView, at: 0)
 		newView.editMode = true
-
+		newView.phoneTypeField.becomeFirstResponder()
 	}
 
 
@@ -64,6 +64,7 @@ class PhoneSectionView: UIStackView {
 		context.delete(phone)
 		context.saveAndContinue()
 		phoneView.removeFromSuperview()
+		delegate.targetPerson?.updateDetailText()
 	}
 
 }

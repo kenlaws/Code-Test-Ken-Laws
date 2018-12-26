@@ -14,7 +14,6 @@ protocol DetailSectionProtocol {
 	var targetPerson:Person? { get }
 	var context:NSManagedObjectContext? { get }
 	var geoCoder:CLGeocoder? { get }
-	func updateDetailText()
 	func scrollToView(view: UIView)
 	func removePhoneView(phoneView:PhoneEditView)
 	func removeEmailView(emailView:EmailEditView)
@@ -115,6 +114,10 @@ class DetailViewController: UIViewController {
 			if let dob = detail.dateOfBirth as Date? {
 				birthdayPicker.date = dob
 			}
+		} else {
+			firstNameField.text = ""
+			lastNameField.text = ""
+			birthdayField.text = ""
 		}
 		self.updateNavTitle()
 		phoneFields.populatePhones()
@@ -154,6 +157,10 @@ class DetailViewController: UIViewController {
 
 
 	override func setEditing(_ editing: Bool, animated: Bool) {
+		guard detailItem != nil else {
+			super.setEditing(false, animated: false)
+			return
+		}
 		super.setEditing(editing, animated: animated)
 		let anim = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) {
 			self.setupEditMode()
@@ -305,33 +312,6 @@ extension DetailViewController: DetailSectionProtocol {
 	}
 
 
-	func updateDetailText() {
-		var detailText = ""
-		if let phones = detailItem?.phones?.array as? [Phone], phones.count > 0 {
-			let usefulPhoneTypes = ["iPhone", "mobile", "home", "work", "office"]
-			for type in usefulPhoneTypes {
-				if let foundPhone = phones.first(where: { $0.phoneType == type && $0.phoneNumber != nil }) {
-					detailText = "\(foundPhone.phoneNumber!) - \(foundPhone.phoneType!)"
-					break
-				}
-			}
-		}
-		if detailText == "" {
-			if let emails = detailItem?.emails?.array as? [Email], emails.count > 0 {
-				let usefulEmailTypes = ["home", "office", "work"]
-				for type in usefulEmailTypes {
-					if let foundEmail = emails.first(where: { $0.emailType == type && $0.emailAddress != nil }) {
-						detailText = "\(foundEmail.emailAddress!) - \(foundEmail.emailType!)"
-						break
-					}
-				}
-			}
-		}
-		detailItem?.detailText = detailText
-		detailItem?.managedObjectContext?.saveAndContinue()
-	}
-
-
 	func scrollToView(view: UIView) {
 		DispatchQueue.main.async {
 			let rect = self.scrollView.convert(view.bounds, from: view).insetBy(dx: 0, dy: -10)
@@ -341,15 +321,18 @@ extension DetailViewController: DetailSectionProtocol {
 
 
 	func removePhoneView(phoneView: PhoneEditView) {
+		UIApplication.shared.sendAction(#selector(UIView.resignFirstResponder), to: nil, from: nil, for: nil)
 		self.phoneFields.removePhone(phoneView: phoneView)
 	}
 
 
 	func removeEmailView(emailView: EmailEditView) {
+		UIApplication.shared.sendAction(#selector(UIView.resignFirstResponder), to: nil, from: nil, for: nil)
 		self.emailFields.removeEmail(emailView: emailView)
 	}
 
 	func removeAddressView(addressView: AddressEditView) {
+		UIApplication.shared.sendAction(#selector(UIView.resignFirstResponder), to: nil, from: nil, for: nil)
 		self.addressFields.removeAddress(addressView: addressView)
 	}
 }

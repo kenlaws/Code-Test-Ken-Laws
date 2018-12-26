@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 		navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
 		splitViewController.delegate = self
 
+		if Device == .pad { splitViewController.preferredDisplayMode = .allVisible }
+
 		return true
 	}
 

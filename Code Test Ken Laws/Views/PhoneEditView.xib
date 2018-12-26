@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="npE-ZD-kOu" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="17" width="171" height="33"/>
+                    <rect key="frame" x="0.0" y="17" width="122.5" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -26,7 +26,7 @@
                     </connections>
                 </textView>
                 <textView opaque="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfE-Nm-cf1" customClass="BorderedTextField" customModule="Code_Test_Ken_Laws" customModuleProvider="target">
-                    <rect key="frame" x="181" y="17" width="256" height="33"/>
+                    <rect key="frame" x="132.5" y="17" width="314.5" height="33"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" textContentType="tel"/>
@@ -35,7 +35,7 @@
                     </connections>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvm-G7-deg">
-                    <rect key="frame" x="447" y="17.5" width="32" height="32"/>
+                    <rect key="frame" x="457" y="17.5" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Qvm-G7-deg" secondAttribute="height" multiplier="1:1" id="CoB-xq-tOk"/>
                         <constraint firstAttribute="width" constant="32" id="JA1-WA-RQi"/>
@@ -55,11 +55,11 @@
                 <constraint firstItem="Qvm-G7-deg" firstAttribute="leading" secondItem="WfE-Nm-cf1" secondAttribute="trailing" constant="10" id="K7m-a1-IgZ"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RXs-r7-1X5"/>
                 <constraint firstItem="Qvm-G7-deg" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="UXe-Zz-J0M"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qvm-G7-deg" secondAttribute="trailing" constant="10" id="Ziv-bG-0eg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qvm-G7-deg" secondAttribute="trailing" id="Ziv-bG-0eg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="npE-ZD-kOu" secondAttribute="bottom" id="gRw-Qh-xpm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qvm-G7-deg" secondAttribute="bottom" constant="4" id="gxn-IR-5hC"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="mzd-Od-CPS"/>
-                <constraint firstItem="npE-ZD-kOu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="nBx-CG-m9H"/>
+                <constraint firstItem="npE-ZD-kOu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="nBx-CG-m9H"/>
                 <constraint firstItem="npE-ZD-kOu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="o9l-iW-3W0"/>
                 <constraint firstItem="WfE-Nm-cf1" firstAttribute="leading" secondItem="npE-ZD-kOu" secondAttribute="trailing" constant="10" id="tPk-Rl-V3z"/>
             </constraints>

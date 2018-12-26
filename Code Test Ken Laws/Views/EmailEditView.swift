@@ -31,7 +31,15 @@ class EmailEditView: UIView {
 	}
 
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		emailField.textContainer.lineBreakMode = .byWordWrapping
+		emailTypeField.textContainer.lineBreakMode = .byWordWrapping
+	}
+
+
 	func setupEditMode() {
+		emailField.textContainer.lineBreakMode = .byWordWrapping
 		emailTypeField.isEditable = editMode
 		emailField.isEditable = editMode
 		emailTypeTrailing.constant = editMode ? 10 : -5
@@ -91,7 +99,7 @@ extension EmailEditView:UITextViewDelegate {
 		default:
 			break
 		}
-		self.delegate.updateDetailText()
+		self.sourceEmail.person?.updateDetailText()
 		self.sourceEmail.person?.timestamp = NSDate()
 		self.sourceEmail.managedObjectContext?.saveAndContinue()
 		return true

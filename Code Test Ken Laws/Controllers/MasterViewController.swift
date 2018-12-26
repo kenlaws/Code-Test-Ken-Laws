@@ -15,12 +15,19 @@ import Intents
 class MasterViewController: UITableViewController {
 
 	var detailViewController: DetailViewController? = nil
-	var managedObjectContext: NSManagedObjectContext = cdf.persistentContainer.viewContext
-	var fetchedResultsController = cdf.fetchedResultsController
+	let managedObjectContext: NSManagedObjectContext = cdf.persistentContainer.viewContext
+	let fetchedResultsController = cdf.fetchedResultsController
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		fetchedResultsController.delegate = self
+
+		if fetchedResultsController.fetchedObjects?.count == 0 {
+			print("Found zero entries. Populating with fake data...")
+			DispatchQueue.global(qos: .background).async {
+				DataImport.importNames()
+			}
+		}
 
 		navigationItem.leftBarButtonItem = editButtonItem
 
@@ -31,6 +38,12 @@ class MasterViewController: UITableViewController {
 		if let split = splitViewController {
 		    let controllers = split.viewControllers
 		    detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+		}
+		if Device == .pad, let section = fetchedResultsController.sections?[0], section.numberOfObjects > 0 {
+			DispatchQueue.main.async {
+				self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
+				self.performSegue(withIdentifier: "showDetail", sender: nil)
+			}
 		}
 	}
 
@@ -63,6 +76,7 @@ class MasterViewController: UITableViewController {
 				controller.detailItem = object
 				controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 				controller.navigationItem.leftItemsSupplementBackButton = true
+				self.detailViewController = controller
 			}
 		}
 	}
@@ -88,12 +102,16 @@ extension MasterViewController { //tableView functions
 	}
 
 	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		// Return false if you do not want the specified item to be editable.
 		return true
 	}
 
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
+			if Device == .pad {
+				if detailViewController?.detailItem == fetchedResultsController.object(at: indexPath) {
+					detailViewController?.detailItem = nil
+				}
+			}
 		    let context = fetchedResultsController.managedObjectContext
 		    context.delete(fetchedResultsController.object(at: indexPath))
 			context.saveAndContinue()
@@ -101,7 +119,7 @@ extension MasterViewController { //tableView functions
 	}
 
 	func configureCell(_ cell: PersonCell, withPerson person: Person) {
-		cell.name.text = "\(person.firstName ?? "") \(person.lastName ?? "")"
+		cell.name.text = person.fullName()
 		cell.detail.text = person.detailText ?? " "
 	}
 

@@ -56,6 +56,8 @@ class EmailSectionView: UIStackView {
 		newView.delegate = delegate
 		newView.sourceEmail = newEmail
 		self.insertArrangedSubview(newView, at: 0)
+		newView.editMode = true
+		newView.emailTypeField.becomeFirstResponder()
 	}
 
 
@@ -67,6 +69,7 @@ class EmailSectionView: UIStackView {
 		context.delete(email)
 		context.saveAndContinue()
 		emailView.removeFromSuperview()
+		delegate.targetPerson?.updateDetailText()
 	}
 }
 

@@ -51,6 +51,8 @@ class AddressSectionView: UIStackView {
 		newView.delegate = delegate
 		newView.sourceAddress = newAddress
 		self.insertArrangedSubview(newView, at: 0)
+		newView.editMode = true
+		newView.addressTypeField.becomeFirstResponder()
 	}
 
 

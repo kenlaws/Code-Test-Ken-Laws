@@ -20,6 +20,10 @@
 		9349B57321CA04EB00EAFA63 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57221CA04EB00EAFA63 /* UIView+nib.swift */; };
 		9349B57521CA053100EAFA63 /* PhoneEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9349B57421CA053100EAFA63 /* PhoneEditView.xib */; };
 		9349B57721CA1B1700EAFA63 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57621CA1B1700EAFA63 /* String+Utilities.swift */; };
+		9376035B21D32A240008E3A7 /* DataImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376035A21D32A240008E3A7 /* DataImport.swift */; };
+		9376035D21D32C810008E3A7 /* nameset.json in Resources */ = {isa = PBXBuildFile; fileRef = 9376035C21D32C810008E3A7 /* nameset.json */; };
+		9376035F21D41C9F0008E3A7 /* phoneset.json in Resources */ = {isa = PBXBuildFile; fileRef = 9376035E21D41C9F0008E3A7 /* phoneset.json */; };
+		9376036121D423560008E3A7 /* addressset.json in Resources */ = {isa = PBXBuildFile; fileRef = 9376036021D423550008E3A7 /* addressset.json */; };
 		937BD81021CC7480006FC8BC /* EmailEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937BD80F21CC7480006FC8BC /* EmailEditView.xib */; };
 		937BD81221CC749D006FC8BC /* EmailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937BD81121CC749D006FC8BC /* EmailEditView.swift */; };
 		937BD81421CC7754006FC8BC /* EmailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937BD81321CC7754006FC8BC /* EmailSectionView.swift */; };
@@ -58,6 +62,10 @@
 		9349B57221CA04EB00EAFA63 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
 		9349B57421CA053100EAFA63 /* PhoneEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneEditView.xib; sourceTree = "<group>"; };
 		9349B57621CA1B1700EAFA63 /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		9376035A21D32A240008E3A7 /* DataImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImport.swift; sourceTree = "<group>"; };
+		9376035C21D32C810008E3A7 /* nameset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nameset.json; sourceTree = SOURCE_ROOT; };
+		9376035E21D41C9F0008E3A7 /* phoneset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phoneset.json; sourceTree = SOURCE_ROOT; };
+		9376036021D423550008E3A7 /* addressset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addressset.json; sourceTree = SOURCE_ROOT; };
 		937BD80F21CC7480006FC8BC /* EmailEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailEditView.xib; sourceTree = "<group>"; };
 		937BD81121CC749D006FC8BC /* EmailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEditView.swift; sourceTree = "<group>"; };
 		937BD81321CC7754006FC8BC /* EmailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSectionView.swift; sourceTree = "<group>"; };
@@ -117,6 +125,9 @@
 				931D53F021C9994C00E88929 /* Storyboards */,
 				931D53EF21C9992600E88929 /* Controllers */,
 				931D53D821C9990600E88929 /* AppDelegate.swift */,
+				9376035C21D32C810008E3A7 /* nameset.json */,
+				9376035E21D41C9F0008E3A7 /* phoneset.json */,
+				9376036021D423550008E3A7 /* addressset.json */,
 				931D53E421C9990700E88929 /* Assets.xcassets */,
 				931D53E921C9990700E88929 /* Info.plist */,
 			);
@@ -187,11 +198,12 @@
 		937F5D2F21C9C9A3003C8025 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */,
-				9349B57221CA04EB00EAFA63 /* UIView+nib.swift */,
-				9349B57621CA1B1700EAFA63 /* String+Utilities.swift */,
-				93C16CAF21CC6E1700DFD92E /* Keyboard.swift */,
 				93295EAB21D1EFB000D16002 /* Alert.swift */,
+				937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */,
+				93C16CAF21CC6E1700DFD92E /* Keyboard.swift */,
+				9349B57621CA1B1700EAFA63 /* String+Utilities.swift */,
+				9349B57221CA04EB00EAFA63 /* UIView+nib.swift */,
+				9376035A21D32A240008E3A7 /* DataImport.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -255,12 +267,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				931D53E821C9990700E88929 /* LaunchScreen.storyboard in Resources */,
+				9376035D21D32C810008E3A7 /* nameset.json in Resources */,
 				938ACB3B21D05BEB006C20D6 /* AddressEditView.xib in Resources */,
 				931D53E521C9990700E88929 /* Assets.xcassets in Resources */,
 				937F5D0E21C9B0CA003C8025 /* PersonCell.xib in Resources */,
 				937BD81021CC7480006FC8BC /* EmailEditView.xib in Resources */,
 				9349B57521CA053100EAFA63 /* PhoneEditView.xib in Resources */,
 				931D53E321C9990600E88929 /* Main.storyboard in Resources */,
+				9376035F21D41C9F0008E3A7 /* phoneset.json in Resources */,
+				9376036121D423560008E3A7 /* addressset.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +308,7 @@
 				93E5744C21CAE79400C84065 /* Person+Functions.swift in Sources */,
 				93313FAC21D084E9006CAC63 /* AddressSectionView.swift in Sources */,
 				93C16CB021CC6E1700DFD92E /* Keyboard.swift in Sources */,
+				9376035B21D32A240008E3A7 /* DataImport.swift in Sources */,
 				9349B57121CA01ED00EAFA63 /* PhoneEditView.swift in Sources */,
 				937F5D0721C9B010003C8025 /* Phone+CoreDataProperties.swift in Sources */,
 				93C16CAE21CC5C3D00DFD92E /* BorderedTextField.swift in Sources */,

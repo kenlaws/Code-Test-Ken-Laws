@@ -98,7 +98,7 @@ extension PhoneEditView:UITextViewDelegate {
 		default:
 			break
 		}
-		self.delegate.updateDetailText()
+		self.sourcePhone.person?.updateDetailText()
 		self.sourcePhone.person?.timestamp = NSDate()
 		self.sourcePhone.managedObjectContext?.saveAndContinue()
 		return true

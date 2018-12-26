@@ -21,5 +21,33 @@ extension Person {
 		return fullName
 	}
 
-	
+
+	func updateDetailText() {
+		var detailText = " "
+		if let phones = self.phones?.array as? [Phone], phones.count > 0 {
+			let usefulPhoneTypes = ["iPhone", "mobile", "home", "work", "office"]
+			for type in usefulPhoneTypes {
+				if let foundPhone = phones.first(where: { $0.phoneType == type && $0.phoneNumber != nil }) {
+					detailText = "\(foundPhone.phoneNumber!) - \(foundPhone.phoneType!)"
+					break
+				}
+			}
+		}
+		if detailText == " " {
+			if let emails = self.emails?.array as? [Email], emails.count > 0 {
+				let usefulEmailTypes = ["home", "office", "work"]
+				for type in usefulEmailTypes {
+					if let foundEmail = emails.first(where: { $0.emailType == type && $0.emailAddress != nil }) {
+						detailText = "\(foundEmail.emailAddress!) - \(foundEmail.emailType!)"
+						break
+					}
+				}
+			}
+		}
+		self.detailText = detailText
+		self.managedObjectContext?.saveAndContinue()
+	}
+
 }
+
+
