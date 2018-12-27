@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import klAlert
 
 /// Custom view for holding an individual Phone entry.
 /// Knows how to update CoreData with new user text.
@@ -106,6 +107,16 @@ extension PhoneEditView:UITextViewDelegate {
 		self.sourcePhone.person?.timestamp = NSDate()
 		self.sourcePhone.managedObjectContext?.saveAndContinue()
 		return true
+	}
+
+
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleBeginEditing()
+	}
+
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleEndEditing()
 	}
 
 

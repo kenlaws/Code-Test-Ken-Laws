@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import klAlert
 
 /// Custom view for holding an individual Address entry.
 /// Knows how to update CoreData with new user text.
@@ -135,6 +136,7 @@ extension AddressEditView:UITextViewDelegate {
 	}
 
 
+
 	func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
 		let text = textView.text.autoTrim
 		switch textView {
@@ -156,6 +158,16 @@ extension AddressEditView:UITextViewDelegate {
 		self.sourceAddress.person?.timestamp = NSDate()
 		self.sourceAddress.managedObjectContext?.saveAndContinue()
 		return true
+	}
+
+
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleBeginEditing()
+	}
+
+	
+	func textViewDidEndEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleEndEditing()
 	}
 
 

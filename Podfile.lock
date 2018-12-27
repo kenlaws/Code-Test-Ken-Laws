@@ -1,0 +1,27 @@
+PODS:
+  - AppCenter (1.12.0):
+    - AppCenter/Analytics (= 1.12.0)
+    - AppCenter/Crashes (= 1.12.0)
+  - AppCenter/Analytics (1.12.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.12.0)
+  - AppCenter/Crashes (1.12.0):
+    - AppCenter/Core
+  - klAlert (1.0.7)
+
+DEPENDENCIES:
+  - AppCenter
+  - klAlert
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AppCenter
+    - klAlert
+
+SPEC CHECKSUMS:
+  AppCenter: 4d27bdafd74b1b3e90946b9989fd6011a7e39c5e
+  klAlert: 49f870875c6ecc9caa61ef1fbf01aeffa26c0423
+
+PODFILE CHECKSUM: 65e7faf7dcb4520536bc181c3539e7f42afead14
+
+COCOAPODS: 1.6.0.beta.1

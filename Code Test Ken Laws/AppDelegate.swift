@@ -8,6 +8,12 @@
 
 import UIKit
 import CoreData
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+
+
+let Device = UIDevice.current.userInterfaceIdiom
 
 /// As should be the norm, very little happens in the AppDelegate.
 /// There's some setup for the UISplitViewController, but that's it.
@@ -19,7 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		MSAppCenter.start("e404f7f6-66d7-447c-b962-1d6fee7bbe3e", withServices:[
+			MSAnalytics.self,
+			MSCrashes.self
+			])
+		
 		let splitViewController = self.window!.rootViewController as! UISplitViewController
 		let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
 		navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem

@@ -141,7 +141,8 @@ extension MasterViewController: NSFetchedResultsControllerDelegate {
 		case .delete:
 			tableView.deleteRows(at: [indexPath!], with: .fade)
 		case .update:
-			configureCell(tableView.cellForRow(at: indexPath!) as! PersonCell, withPerson: anObject as! Person)
+			guard let cell = tableView.cellForRow(at: indexPath!) as? PersonCell else { return }
+			configureCell(cell, withPerson: anObject as! Person)
 		case .move:
 			configureCell(tableView.cellForRow(at: indexPath!) as! PersonCell, withPerson: anObject as! Person)
 			tableView.moveRow(at: indexPath!, to: newIndexPath!)

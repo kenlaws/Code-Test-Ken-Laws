@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import klAlert
 
 /// Custom view for holding an individual Email entry.
 /// Knows how to update CoreData with new user text.
@@ -107,6 +108,16 @@ extension EmailEditView:UITextViewDelegate {
 		self.sourceEmail.person?.timestamp = NSDate()
 		self.sourceEmail.managedObjectContext?.saveAndContinue()
 		return true
+	}
+
+
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleBeginEditing()
+	}
+
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+		(textView as! BorderedTextField).handleEndEditing()
 	}
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75E5F6D527DBD409F649482D /* Pods_Code_Test_Ken_Laws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211768471BC02AFE4229FDC9 /* Pods_Code_Test_Ken_Laws.framework */; };
 		931D53D921C9990600E88929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D53D821C9990600E88929 /* AppDelegate.swift */; };
 		931D53DC21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 931D53DA21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodeld */; };
 		931D53DE21C9990600E88929 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D53DD21C9990600E88929 /* MasterViewController.swift */; };
@@ -14,7 +15,6 @@
 		931D53E321C9990600E88929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E121C9990600E88929 /* Main.storyboard */; };
 		931D53E521C9990700E88929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E421C9990700E88929 /* Assets.xcassets */; };
 		931D53E821C9990700E88929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931D53E621C9990700E88929 /* LaunchScreen.storyboard */; };
-		93295EAC21D1EFB000D16002 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93295EAB21D1EFB000D16002 /* Alert.swift */; };
 		93313FAC21D084E9006CAC63 /* AddressSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93313FAB21D084E9006CAC63 /* AddressSectionView.swift */; };
 		9349B57121CA01ED00EAFA63 /* PhoneEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */; };
 		9349B57321CA04EB00EAFA63 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349B57221CA04EB00EAFA63 /* UIView+nib.swift */; };
@@ -47,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211768471BC02AFE4229FDC9 /* Pods_Code_Test_Ken_Laws.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_Test_Ken_Laws.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C7DA3ACC0324D52FFB025D6 /* Pods-Code Test Ken Laws.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code Test Ken Laws.debug.xcconfig"; path = "Target Support Files/Pods-Code Test Ken Laws/Pods-Code Test Ken Laws.debug.xcconfig"; sourceTree = "<group>"; };
+		8253E8BF14FC12D48B96BF04 /* Pods-Code Test Ken Laws.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code Test Ken Laws.release.xcconfig"; path = "Target Support Files/Pods-Code Test Ken Laws/Pods-Code Test Ken Laws.release.xcconfig"; sourceTree = "<group>"; };
 		931D53D521C9990600E88929 /* Code Test Ken Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Test Ken Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		931D53D821C9990600E88929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		931D53DB21C9990600E88929 /* Code_Test_Ken_Laws.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Code_Test_Ken_Laws.xcdatamodel; sourceTree = "<group>"; };
@@ -56,7 +59,6 @@
 		931D53E421C9990700E88929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931D53E721C9990700E88929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931D53E921C9990700E88929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93295EAB21D1EFB000D16002 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		93313FAB21D084E9006CAC63 /* AddressSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSectionView.swift; sourceTree = "<group>"; };
 		9349B57021CA01ED00EAFA63 /* PhoneEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEditView.swift; sourceTree = "<group>"; };
 		9349B57221CA04EB00EAFA63 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
@@ -93,17 +95,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E5F6D527DBD409F649482D /* Pods_Code_Test_Ken_Laws.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1095CFB8975F4402337D9DD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C7DA3ACC0324D52FFB025D6 /* Pods-Code Test Ken Laws.debug.xcconfig */,
+				8253E8BF14FC12D48B96BF04 /* Pods-Code Test Ken Laws.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		931D53CC21C9990600E88929 = {
 			isa = PBXGroup;
 			children = (
 				931D53D721C9990600E88929 /* Code Test Ken Laws */,
 				931D53D621C9990600E88929 /* Products */,
+				1095CFB8975F4402337D9DD4 /* Pods */,
+				D15F3DC8B26EB10F83971B09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,7 +212,6 @@
 		937F5D2F21C9C9A3003C8025 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				93295EAB21D1EFB000D16002 /* Alert.swift */,
 				937F5D3021C9C9C4003C8025 /* CoreDataFunctions.swift */,
 				93C16CAF21CC6E1700DFD92E /* Keyboard.swift */,
 				9349B57621CA1B1700EAFA63 /* String+Utilities.swift */,
@@ -208,6 +221,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D15F3DC8B26EB10F83971B09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				211768471BC02AFE4229FDC9 /* Pods_Code_Test_Ken_Laws.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 931D53EC21C9990700E88929 /* Build configuration list for PBXNativeTarget "Code Test Ken Laws" */;
 			buildPhases = (
+				1C02DCCD44D64F47BC33593E /* [CP] Check Pods Manifest.lock */,
 				931D53D121C9990600E88929 /* Sources */,
 				931D53D221C9990600E88929 /* Frameworks */,
 				931D53D321C9990600E88929 /* Resources */,
+				BFA03A47887BA1F87EF50385 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +304,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C02DCCD44D64F47BC33593E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Code Test Ken Laws-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFA03A47887BA1F87EF50385 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Code Test Ken Laws/Pods-Code Test Ken Laws-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/klAlert/klAlert.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/klAlert.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Code Test Ken Laws/Pods-Code Test Ken Laws-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		931D53D121C9990600E88929 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,7 +374,6 @@
 				938ACB3D21D05BFD006C20D6 /* AddressEditView.swift in Sources */,
 				937BD81221CC749D006FC8BC /* EmailEditView.swift in Sources */,
 				937BD81421CC7754006FC8BC /* EmailSectionView.swift in Sources */,
-				93295EAC21D1EFB000D16002 /* Alert.swift in Sources */,
 				93E5744C21CAE79400C84065 /* Person+Functions.swift in Sources */,
 				93313FAC21D084E9006CAC63 /* AddressSectionView.swift in Sources */,
 				93C16CB021CC6E1700DFD92E /* Keyboard.swift in Sources */,
@@ -456,9 +525,11 @@
 		};
 		931D53ED21C9990700E88929 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C7DA3ACC0324D52FFB025D6 /* Pods-Code Test Ken Laws.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9W4CY5VCCP;
 				INFOPLIST_FILE = "Code Test Ken Laws/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,6 +538,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khana.Code-Test-Ken-Laws";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Code Test Dev";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,9 +546,11 @@
 		};
 		931D53EE21C9990700E88929 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8253E8BF14FC12D48B96BF04 /* Pods-Code Test Ken Laws.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9W4CY5VCCP;
 				INFOPLIST_FILE = "Code Test Ken Laws/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.khana.Code-Test-Ken-Laws";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Code Test Ken Laws";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

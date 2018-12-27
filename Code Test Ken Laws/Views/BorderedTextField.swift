@@ -22,14 +22,22 @@ class BorderedTextField: UITextView {
 
 	@IBInspectable var cornerRadius:CGFloat = 4
 
+	@IBInspectable var placeholderText:String = ""
+
 	override var isEditable: Bool {
 		didSet {
 			self.setNeedsLayout()
 		}
 	}
 
+
 	override func layoutSubviews() {
 		super.layoutSubviews()
+
+		if self.text == "" && isEditable && !isFirstResponder {
+			self.textColor = UIColor.lightGray
+			self.text = placeholderText
+		}
 
 		layer.masksToBounds = true
 		layer.cornerRadius = cornerRadius
@@ -37,4 +45,23 @@ class BorderedTextField: UITextView {
 		layer.borderColor = isEditable ? borderColor.cgColor : offBorderColor.cgColor
 	}
 
+}
+
+
+extension BorderedTextField {
+
+	func handleBeginEditing() {
+		if self.text == placeholderText {
+			self.text = ""
+		}
+		self.textColor = UIColor.black
+	}
+
+
+	func handleEndEditing() {
+		if self.text.autoTrim == "" {
+			self.textColor = UIColor.lightGray
+			self.text = placeholderText
+		}
+	}
 }
